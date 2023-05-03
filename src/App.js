@@ -26,7 +26,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/botindex" element={<BotIndex />} />
+        <Route path="/botindex" element={<BotIndex bots={bots}/>} />
         <Route path='/botshow' element={<BotShow />} />
         <Route path='/botnew' element={<BotNew />} />
         <Route path='/botedit' element={<BotEdit />} />
