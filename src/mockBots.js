@@ -1,4 +1,4 @@
-const bots = [
+const mockBots = [
     {
         id: 1,
         name: 'Felix Patapalo',
@@ -34,4 +34,4 @@ const bots = [
 
   ]
   
- export default mocBots
+ export default mockBots
