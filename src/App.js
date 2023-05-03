@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// app.js will run all the logic of the application
 
-function App() {
+// imports
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.js'
+import Header from './components/Header'
+import BotIndex from './pages/BotIndex.js'
+import BotShow from './pages/BotShow.js'
+import BotNew from './pages/BotNew.js'
+import BotEdit from './pages/BotEdit.js'
+import BotNotFound from './pages/BotNotFound.js'
+import Footer from './components/Footer'
+import mockBots from './mockBots.js'
+import './App.css'
+
+const App = () => {
+  
+  //state variable
+  const [bots, setBots] = useState(mockBots)
+
+  console.log(bots)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/botindex' element={<BotIndex />} />
+        <Route path='/botshow' element={<BotShow />} />
+        <Route path='/botnew' element={<BotNew />} />
+        <Route path='/botedit' element={<BotEdit />} />
+        <Route path='*' element={<BotNotFound />} />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
 export default App;
