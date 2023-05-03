@@ -1,9 +1,12 @@
 // BotEdit page structure
 
 const BotEdit = () => {
-    <>
-        <h3>Fix a Bot</h3>
-    </>
+    
+    return (
+        <>
+            <h3>Fix a Bot</h3>
+        </>
+    )
 }
 
 export default BotEdit

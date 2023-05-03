@@ -1,8 +1,8 @@
 // app.js will run all the logic of the application
 
 // imports
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import Home from './pages/Home.js'
 import Header from './components/Header'
 import BotIndex from './pages/BotIndex.js'
@@ -25,8 +25,8 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/botindex' element={<BotIndex />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/botindex" element={<BotIndex />} />
         <Route path='/botshow' element={<BotShow />} />
         <Route path='/botnew' element={<BotNew />} />
         <Route path='/botedit' element={<BotEdit />} />
