@@ -1,11 +1,8 @@
-// footer component structure
-
-
 const Footer = () => {
     return (
-        <>
-            <h3>Herein lies the footer</h3>
-        </>
+        <footer>
+            <h5>Created by Borja Xaire & Elmer Figueroa</h5>
+        </footer>
     )
 }
 

@@ -17,6 +17,7 @@ import './App.css'
 const App = () => {
   
   //state variable
+  // eslint-disable-next-line no-unused-vars
   const [bots, setBots] = useState(mockBots)
 
   console.log(bots)
@@ -27,7 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/botindex" element={<BotIndex bots={bots}/>} />
-        <Route path='/botshow' element={<BotShow />} />
+        <Route path='/botshow/:id' element={<BotShow bots={bots}/>} />
         <Route path='/botnew' element={<BotNew />} />
         <Route path='/botedit' element={<BotEdit />} />
         <Route path='*' element={<BotNotFound />} />
