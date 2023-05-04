@@ -3,16 +3,19 @@ import { MemoryRouter, Routes, Route } from "react-router-dom"
 import BotShow from "../pages/BotShow"
 import mockBots from "../mockBots"
 
-describe("<BotShow />", () => {
-    it("renders without crashing", () => {
-        render(
-            <MemoryRouter initialEntries={['/botshow/1']}>
-                <Routes>
-                    <Route path="/botshow/:id" element={<BotShow bots={mockBots}/>} />  
-                </Routes>
-            </MemoryRouter>
-        )
-        const botName = screen.getByText(mockBots[0].name, {exact: false})
-        expect(botName).toBeInTheDocument()
+const renderShow = () => {
+    render(
+        <MemoryRouter initialEntries={["/botshow/1"]}>
+            <Routes>
+                <Route path="/botshow/:id" element={<BotShow bots={mockBots} />} />
+            </Routes>
+        </MemoryRouter>
+    )
+}
+    
+describe("<BotShow/>", () => {
+    it("renders bot card with name", () => {
+        renderShow()
+        expect(screen.getByText(`${mockBots[0].name} enjoys ${mockBots[0].enjoys}`, {exact: false})).toBeInTheDocument()
     })
 })

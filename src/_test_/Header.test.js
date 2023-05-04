@@ -10,7 +10,7 @@ describe("<Header />", () => {
     expect(brand).toBeInTheDocument()
   })
     
-  it("should contain active links")
+  it("should contain active links", () => {
     render(
       <BrowserRouter>
       <Header />
@@ -19,4 +19,4 @@ describe("<Header />", () => {
 
     userEvent.click(screen.getByText("Browse our Bots"))
     expect(screen.getByText("Browse our Bots")).toBeInTheDocument()
-})
+})})

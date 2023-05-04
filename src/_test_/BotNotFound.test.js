@@ -11,6 +11,6 @@ describe('<NotFound />', () => {
   it('should contain image', () => {
     render(<BotNotFound />)
     const img = screen.getByRole('img')
-    expect(img).toHaveAttribute('alt', 'Jetby mind trick')
+    expect(img).toHaveAttribute('alt', 'Jetby mind tricks')
   })
 })
