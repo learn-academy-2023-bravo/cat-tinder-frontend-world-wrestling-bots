@@ -8,7 +8,7 @@ const BotIndex = ({ bots }) => {
     return (
         
         <main className='bots-index-cards'>
-            {bots.map((bot, index) => {
+            {bots?.map((bot, index) => {
                 return (
                     <Card style={{ width: '18rem' }} key={index}>
                     <CardBody>
