@@ -20,7 +20,9 @@ const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [bots, setBots] = useState(mockBots)
 
-  console.log(bots)
+  const createBot = (bot) => {
+    console.log(bot)
+  }
 
   return (
     <>
@@ -29,7 +31,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/botindex" element={<BotIndex bots={bots}/>} />
         <Route path='/botshow/:id' element={<BotShow bots={bots}/>} />
-        <Route path='/botnew' element={<BotNew />} />
+        <Route path='/botnew' element={<BotNew createBot={createBot} />} />
         <Route path='/botedit' element={<BotEdit />} />
         <Route path='*' element={<BotNotFound />} />
       </Routes>
