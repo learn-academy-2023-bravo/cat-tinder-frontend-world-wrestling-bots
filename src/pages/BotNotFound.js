@@ -1,11 +1,11 @@
-// BotNotFound page structure
-import noDroids from '../assets/not_the_bots.jpeg'
+import noBots from '../assets/not_the_bots.jpeg'
 
 const BotNotFound = () => {
 
     return (
       <>
-        <img alt="These are not the bots you are looking for..."src={noDroids} width="100%" />
+        <p>Go back! It's a trap!</p>
+        <img alt='Jetby mind tricks' src={noBots} width="500" />
       </>
     )
   }
