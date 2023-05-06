@@ -81,7 +81,7 @@ const BotNew = ({ createBot }) => {
             value={newBot.image}
           />
         </FormGroup>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={handleSubmit}>Submit</Button>
       </Form>
     </>
   )
