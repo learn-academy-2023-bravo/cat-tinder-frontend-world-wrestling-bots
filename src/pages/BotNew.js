@@ -1,43 +1,38 @@
-// BotNew page structure
-// Imports
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Button, Form, FormGroup, Input, Label } from "reactstrap"
+import { useState } from "react"
+import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+import { useNavigate } from "react-router-dom"
 
-const BotNew = ( { createBot } ) => {
+const BotNew = ({ createBot }) => {
+  const navigate = useNavigate()
 
-    const navigate = useNavigate()
+  const [newBot, setNewBot] = useState({
+    name: "",
+    age: "",
+    weight: "",
+    enjoys: "",
+    image: "",
+  })
 
-    const [newBot, setNewBot] = useState({
-      name: "",
-      age: "",
-      weight: "",
-      enjoys: "",
-      image: ""
-    })
+  const handleChange = (e) => {
+    setNewBot({ ...newBot, [e.target.name]: e.target.value });
+  }
 
-    const handleChange = (e) => {
-        // Spread operator makes copy of state object
-        // e.target.name will give us the key we are updating based on input
-        // e.target.value will be the new value in state
-        setNewBot({ ...newBot, [e.target.name]: e.target.value})
-      }
-
-    const handleSubmit = ()=>{
+  const handleSubmit = (e) => {
+    e.preventDefault()
     createBot(newBot)
     navigate("/botindex")
-    }
-    
-    return (
-        <>
-            <Form>
+  }
+
+  return (
+    <>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="bot-name">Name</Label>
           <Input
-            id="bot-name"
-            name="name"
-            placeholder="The name of your Bot"
             type="text"
+            name="name"
+            id="bot-name"
+            placeholder="The name of your Bot"
             onChange={handleChange}
             value={newBot.name}
           />
@@ -45,10 +40,10 @@ const BotNew = ( { createBot } ) => {
         <FormGroup>
           <Label for="bot-age">Age</Label>
           <Input
-            id="bot-age"
+            type="number"
             name="age"
-            placeholder="Enter the bot's from date of Manufactoring"
-            type="text"
+            id="bot-age"
+            placeholder="How old is your bot?"
             onChange={handleChange}
             value={newBot.age}
           />
@@ -56,40 +51,40 @@ const BotNew = ( { createBot } ) => {
         <FormGroup>
           <Label for="bot-weight">Weight</Label>
           <Input
-            id="bot-weight"
+            type="number"
             name="weight"
+            id="bot-weight"
             placeholder="Enter the bot's weight for placing into proper weight class"
-            type="text"
             onChange={handleChange}
             value={newBot.weight}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="cat-enjoys">Enjoys</Label>
+          <Label for="bot-enjoys">Enjoys</Label>
           <Input
-            id="bot-enjoys"
-            name="enjoys"
-            placeholder="What does your bot enjoy?"
             type="text"
+            name="enjoys"
+            id="bot-enjoys"
+            placeholder="What does your bot enjoy?"
             onChange={handleChange}
             value={newBot.enjoys}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="bot-image">Picture</Label>
+          <Label for="bot-image">Image URL</Label>
           <Input
-            id="bot-image"
-            name="image"
-            placeholder="Enter your Bot-Face!"
             type="text"
+            name="image"
+            id="bot-image"
+            placeholder="Enter your Bot-Face!"
             onChange={handleChange}
             value={newBot.image}
           />
         </FormGroup>
-        <Button onClick={handleSubmit}>Submit Bot</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     </>
-    )
+  )
 }
 
 export default BotNew
