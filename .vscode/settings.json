@@ -4,6 +4,7 @@
         "botedit",
         "botindex",
         "botnew",
-        "botshow"
+        "botshow",
+        "textbox"
     ]
 }
