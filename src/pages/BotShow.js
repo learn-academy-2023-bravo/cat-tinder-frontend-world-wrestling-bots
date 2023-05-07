@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { Container } from 'reactstrap'
+import { NavLink, useParams } from 'react-router-dom'
+import { Button, Container } from 'reactstrap'
 
 const BotShow = ({ bots }) => {
     const { id } = useParams()
@@ -9,10 +9,6 @@ const BotShow = ({ bots }) => {
             <Container className='show-profile' fluid='sm'>
                 <h1>Name: {currentBot.name}, Age: {currentBot.age}, Weight: {currentBot.weight}</h1>
                 <div className='show-container'>
-                <div
-                    className='show-background'
-                    style={{ backgroundImage: `url(${currentBot.image})` }}
-                />
                 <img
                     className='show-image'
                     src={currentBot.image}
@@ -21,6 +17,9 @@ const BotShow = ({ bots }) => {
                 </div>
                 <p>{currentBot.name} enjoys {currentBot.enjoys}</p>
             </Container>
+            <Button to={`/botedit/${id}`} tag={NavLink} outline={true}>
+                Edit
+            </Button>
         </main>
     )
 }

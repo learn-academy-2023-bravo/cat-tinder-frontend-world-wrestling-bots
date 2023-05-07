@@ -1,8 +1,6 @@
-// app.js will run all the logic of the application
-
-// imports
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
+import { Container } from 'reactstrap'
 import Home from './pages/Home.js'
 import Header from './components/Header'
 import BotIndex from './pages/BotIndex.js'
@@ -15,26 +13,34 @@ import mockBots from './mockBots.js'
 import './App.css'
 
 const App = () => {
-  
-  //state variable
-  // eslint-disable-next-line no-unused-vars
   const [bots, setBots] = useState(mockBots)
+  const id = Math.floor(Math.random() * 9000000000) + 1000000000
 
   const createBot = (bot) => {
+    setBots([{ ...bot, id }, ...bots])
+  }
+
+  const updateBot = (bot) => {
+    const botToUpdate = bots.findIndex((t) => bot.id === t.id)
+    const mockArray = [...bots]
+    mockArray[botToUpdate] = bot
+    setBots(mockArray)
     console.log(bot)
   }
 
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/botindex" element={<BotIndex bots={bots}/>} />
-        <Route path='/botshow/:id' element={<BotShow bots={bots}/>} />
-        <Route path='/botnew' element={<BotNew createBot={createBot} />} />
-        <Route path='/botedit' element={<BotEdit />} />
-        <Route path='*' element={<BotNotFound />} />
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/botindex" element={<BotIndex bots={bots}/>} />
+          <Route path='/botshow/:id' element={<BotShow bots={bots}/>} />
+          <Route path='/botnew' element={<BotNew createBot={createBot} />} />
+          <Route path='/botedit/:id' element={<BotEdit bots={bots} updateBot={updateBot}/>} />
+          <Route path='*' element={<BotNotFound />} />
+        </Routes>
+      </Container>
       <Footer />
     </>
   )
