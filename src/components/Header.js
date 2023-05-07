@@ -1,4 +1,3 @@
-// header component structure
 import React, { useState } from 'react';
 import {
   Collapse,
@@ -15,6 +14,15 @@ function Header(args) {
 
   const toggle = () => setIsOpen(!isOpen)
 
+  // Generate a random integer between 1 and 10 (assuming you have 10 show pages)
+  const getRandomShowId = () => Math.floor(Math.random() * 10) + 1
+
+  // Handle "View a Bot" click
+  const handleBotShowClick = () => {
+    const showId = getRandomShowId()
+    window.location.href = `/botshow/${showId}`
+  }
+
   return (
     <div>
       <Navbar expand='md' container='xl'>
@@ -28,12 +36,6 @@ function Header(args) {
             <NavItem>
               <NavLink href="/botnew">Register a new Bot</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/botshow">View a Bot</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/botedit">Fix a Bot</NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
@@ -41,4 +43,4 @@ function Header(args) {
   )
 }
 
-export default Header;
+export default Header
