@@ -1,33 +1,41 @@
-import { NavLink } from 'react-router-dom'
-import React from 'react'
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap"
-
-const BotIndex = ({ bots }) => {
-    
+import {
+    Card,
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    Row,
+    Col,
+  } from 'reactstrap'
+  import { NavLink } from 'react-router-dom'
+  
+  const BotIndex = ({ bots }) => {
     return (
-        
-        <main className='bots-index-cards'>
-            {bots?.map((bot, index) => {
-                return (
-                    <Card style={{ width: '18rem' }} key={index}>
-                        <CardBody>
-                            <CardTitle tag="h5">{bot.name}</CardTitle>
-                            <CardSubtitle className="mb-2 text-muted" tag="h6">
-                                Age {bot.age}. Weight {bot.weight}
-                            </CardSubtitle>
-                        </CardBody>
-                            <img alt={`profile of a bot named ${bot.name}`} src={bot.image} width="100%" />
-                        <CardBody>
-                        <NavLink to={`/botshow/${bot.id}`}>
-                            <Button>Click Away IF YOU DARE!!</Button>
-                        </NavLink>
-                        
-                    </CardBody>
+      <Row>
+        {bots.map((bot, index) => {
+          return (
+            <Col xs={12} sm={6} md={4} lg={3} key={bot.id}>
+              <NavLink
+                to={`/botshow/${bot.id}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <Card key={index} className='bott-card'>
+                  <img
+                    alt={`profile of a bot named ${bot.name}`}
+                    src={bot.image}
+                  />
+                  <CardBody>
+                    <CardTitle tag='h5'>{bot.name}</CardTitle>
+                    <CardSubtitle className='mb-2 text-muted' tag='h6'>
+                      Age: {bot.age}
+                    </CardSubtitle>
+                  </CardBody>
                 </Card>
-                )
-            })}
-        </main>
+              </NavLink>
+            </Col>
+          )
+        })}
+      </Row>
     )
-}
-
-export default BotIndex
+  }
+  
+  export default BotIndex
