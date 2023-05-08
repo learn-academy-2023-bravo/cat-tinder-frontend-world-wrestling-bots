@@ -14,6 +14,7 @@ body {
 
 .home-background{
   padding-top: 40px;
+  margin: 5px;
   border-radius: 40px;
   text-align: center;
   -webkit-text-fill-color: #89e3f6;
@@ -34,15 +35,38 @@ body {
   margin: 5rem 2rem;
   color: #89e3f6;
   background-color: #8f704b !important;
+  display: flex;
+  flex-wrap:nowrap;
+  min-height: 60vh;
+  max-height: 60vh;
 }
 
-.bots-index-cards {
+.indexed-images{
+  max-height: 39vh;
+
+}
+
+/* .bots-index-cards {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-}
+} */
 
 .footer-style{
-  margin: 1rem
+  background-color: #8F704B;
+  margin: 10px;
+  border-radius: 40px;
+  text-align: center;
+  -webkit-text-fill-color: #89e3f6;
+}
+
+.nav-style{
+  background-color: #8f704b;
+  margin: 10px;
+  border-radius: 40px;
+}
+
+.show-image{
+  max-height: 69vh;
 }

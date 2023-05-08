@@ -34,9 +34,10 @@ const BotEdit = ({ updateBot, deleteBot, bots }) => {
     navigate(`/botshow/${id}`)
   }
 
-  const handleDelete = () => {
+  const handleDelete = (e) => {
+    e.preventDefault()
     deleteBot(id)
-    navigate('/botindex/')
+    navigate('/botindex')
   }
 
   return (
