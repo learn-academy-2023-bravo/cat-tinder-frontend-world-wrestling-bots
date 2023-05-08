@@ -1,9 +1,48 @@
-.card {
-  margin: 2rem 0;
+@font-face {
+  font-family: 'Moonhouse-yE5M.ttf';
+  src: url('./fonts/Moonhouse-yE5M.ttf');
+}
+
+body {
+  min-height: 100vh;
+  background-color:#44786a !important;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Moonhouse-yE5M.ttf' !important;
+  font-weight: bolder !important;
+}
+
+.home-background{
+  padding-top: 40px;
+  border-radius: 40px;
+  text-align: center;
+  -webkit-text-fill-color: #89e3f6;
+  height: 130vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* font-family: 'moonhouse-font-f18420'; */
+}
+
+.welcome-home{
+  /* font-family: 'Moonhouse-yE5M.ttf'; */
+  /* font-weight: bolder; */
+  font-size:3rem
+}
+
+.bott-card{
+  margin: 5rem 2rem;
+  color: #89e3f6;
+  background-color: #8f704b !important;
 }
 
 .bots-index-cards {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
+}
+
+.footer-style{
+  margin: 1rem
 }

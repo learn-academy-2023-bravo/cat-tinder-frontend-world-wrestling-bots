@@ -9,6 +9,8 @@ import BotNew from './pages/BotNew.js'
 import BotEdit from './pages/BotEdit.js'
 import BotNotFound from './pages/BotNotFound.js'
 import Footer from './components/Footer'
+import './fonts/JapaneseRobot-0WWdX.ttf'
+import './fonts/JapaneseRobotItalic-owwXz.ttf'
 import './App.css'
 
 const App = () => {

@@ -7,7 +7,8 @@ const BotShow = ({ bots }) => {
     return (
         <main>
             <Container className='show-profile' fluid='sm'>
-                <h1>Name: {currentBot.name}, Age: {currentBot.age}, Weight: {currentBot.weight}</h1>
+                <h2>Name: {currentBot.name}</h2> 
+                <h4>Age: {currentBot.age} <br></br> Weight: {currentBot.weight}</h4>
                 <div className='show-container'>
                 <img
                     className='show-image'
@@ -15,10 +16,10 @@ const BotShow = ({ bots }) => {
                     alt={`${currentBot.name}'s profile`}
                 />
                 </div>
-                <p>{currentBot.name} enjoys {currentBot.enjoys}</p>
+                <h4>{currentBot.name} enjoys {currentBot.enjoys}</h4>
             </Container>
-            <Button to={`/botedit/${id}`} tag={NavLink} outline={true}>
-                Edit
+            <Button to={`/botedit/${id}`} tag={NavLink} outline={false}>
+                Edit {currentBot.name}
             </Button>
         </main>
     )
