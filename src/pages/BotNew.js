@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Card, CardBody, Form, FormGroup, Input, Label } from "reactstrap"
 
 const BotNew = ({ createBot }) => {
-  const navigate = useNavigate()
-
+  
   const navigate = useNavigate()
 
   const [newBot, setNewBot] = useState({

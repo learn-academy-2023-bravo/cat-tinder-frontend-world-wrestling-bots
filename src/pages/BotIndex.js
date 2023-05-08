@@ -8,6 +8,7 @@ import {
   } from 'reactstrap'
   import { NavLink } from 'react-router-dom'
   
+
   const BotIndex = ({ bots }) => {
     return (
       <Row>
@@ -22,11 +23,12 @@ import {
                   <img
                     alt={`profile of a bot named ${bot.name}`}
                     src={bot.image}
+                    
                   />
                   <CardBody>
-                    <CardTitle tag='h5'>{bot.name}</CardTitle>
-                    <CardSubtitle className='mb-2 text-muted' tag='h6'>
-                      Age: {bot.age}
+                    <CardTitle tag='h4'>{bot.name}</CardTitle>
+                    <CardSubtitle className='mb-2' tag='h6'>
+                      Age: {bot.age} years since DOM <br></br> Weight: {bot.weight} kg
                     </CardSubtitle>
                   </CardBody>
                 </Card>

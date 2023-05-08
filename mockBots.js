@@ -13,7 +13,7 @@ const bots = [
         age: 12,
         weight: 9,
         enjoys: 'Eliminating any food in sight',
-        image: 'https://www.floatingcat.com/wp-content/uploads/2009/05/0065356940463_500x500.jpg'
+        image: 'https://cdn.openart.ai/stable_diffusion/216eafeb74362e9bd70a9ded285d0c0762aeb8b8_2000x2000.webp'
     },
     {
         id: 3,
