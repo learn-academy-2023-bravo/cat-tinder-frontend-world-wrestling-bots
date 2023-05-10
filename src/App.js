@@ -67,10 +67,10 @@ const App = () => {
         "Content-Type": "application/json"
       },
       method: "DELETE"
+    })
       .then(response => response.json())
       .then(() => readBot())
       .catch(error => console.log("Bots are loose! AKA Bot read errors", error))
-    })
   }
 
   if (loading || bots.length === 0) {

@@ -12,7 +12,7 @@ import {
   const BotIndex = ({ bots }) => {
     return (
       <Row>
-        {bots.map((bot, index) => {
+        {bots?.map((bot, index) => {
           return (
             <Col xs={12} sm={6} md={4} lg={3} key={bot.id}>
               <NavLink
@@ -21,6 +21,7 @@ import {
               >
                 <Card key={index} className='bott-card'>
                   <img
+                    className='indexed-images'
                     alt={`profile of a bot named ${bot.name}`}
                     src={bot.image}
                     
@@ -28,7 +29,7 @@ import {
                   <CardBody>
                     <CardTitle tag='h4'>{bot.name}</CardTitle>
                     <CardSubtitle className='mb-2' tag='h6'>
-                      Age: {bot.age} years since DOM <br></br> Weight: {bot.weight} kg
+                      Age: {bot.age} years since DoM <br></br> Weight: {bot.weight} kg
                     </CardSubtitle>
                   </CardBody>
                 </Card>

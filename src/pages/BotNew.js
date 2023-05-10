@@ -1,8 +1,8 @@
 // BotNew page structure
 // Imports
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Button, Card, CardBody, Form, FormGroup, Input, Label } from "reactstrap"
+import { useNavigate } from 'react-router-dom'
 
 const BotNew = ({ createBot }) => {
   
@@ -24,8 +24,8 @@ const BotNew = ({ createBot }) => {
     }
 
   const handleSubmit = ()=>{
-  createBot(newBot)
-  navigate("/botindex")
+    createBot(newBot)
+    navigate("/botindex")
   }
   
   return (
@@ -67,7 +67,7 @@ const BotNew = ({ createBot }) => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="cat-enjoys">Enjoys</Label>
+              <Label for="bot-enjoys">Enjoys</Label>
               <Input
                 id="bot-enjoys"
                 name="enjoys"

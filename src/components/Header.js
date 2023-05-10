@@ -14,18 +14,18 @@ function Header(args) {
 
   const toggle = () => setIsOpen(!isOpen)
 
-  // Generate a random integer between 1 and 10 (assuming you have 10 show pages)
-  const getRandomShowId = () => Math.floor(Math.random() * 10) + 1
+  // Stretch Goal: Generate a random integer between 1 and 10 (assuming you have 10 show pages)
+  // const getRandomShowId = () => Math.floor(Math.random() * 10) + 1
 
   // Handle "View a Bot" click
-  const handleBotShowClick = () => {
-    const showId = getRandomShowId()
-    window.location.href = `/botshow/${showId}`
-  }
+  // const handleBotShowClick = () => {
+  //   const showId = getRandomShowId()
+  //   window.location.href = `/botshow/${showId}`
+  // }
 
   return (
     <div>
-      <Navbar expand='md' container='xl'>
+      <Navbar className='nav-style' expand='md' container='xl'>
         <NavbarBrand href="/">World Wrestling Bots</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
